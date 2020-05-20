@@ -1,3 +1,4 @@
+import random
 csb = input("Lütfen Şifrelemek İstediğiniz Metni Giriniz: ")
 
 
@@ -54,9 +55,21 @@ class Incele():
     basla = 0
     bitir = 1
     harfler = list()
+
+    def durak():
+        durak = ["T","C"]
+        durakEkle = random.sample(durak,1) #durak aralarına rastgele t ya da c harflerinden birini ekler.
+        return durakEkle
+
     def parcala(): #string parçalandı harfler isimli bir listeye tüm harfleri tek tek atıldı.
         for i in range(0,len(csb)):
             Incele.harfler.append(csb[Incele.basla+i:Incele.bitir+i])
+            Incele.harfler = Incele.harfler + Incele.durak()
+
+        print(Incele.harfler)
+        return Incele.harfler
+
+
 
 
 
