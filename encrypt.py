@@ -40,13 +40,14 @@ class Sezar():
                     "s":5,
                     "ş":16,
                     "t":4,
-                    "u":39,
-                    "ü":40,
+                    "u":41,
+                    "ü":42,
                     "v":31,
                     "y":36,
                     "z":11,
                     "T":"T",
                     "C":"C",
+                    " ":1453,
                     } #latin - osmanlı alfabe karşılığı
 
      def latinDeger(harf): #latince ifadenin sayısal karşılığını
@@ -67,19 +68,47 @@ class Incele():
 
     def parcala(): #string parçalandı harfler isimli bir listeye tüm harfleri tek tek atıldı.
         for i in range(0,len(csb)):
-            Incele.harfler.append(csb[Incele.basla+i:Incele.bitir+i])
-            Incele.harfler = Incele.harfler + Incele.durak()
+            Incele.harfler.append(csb[Incele.basla+i:Incele.bitir+i]) #harfi al
+            Incele.harfler = Incele.harfler + Incele.durak() #durak ekle
+
+
 
         return Incele.harfler
 
 
 class Sifre():
     sifre_liste = list()
+
+    asal_liste = [11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97]
+
+    sayı_liste = [10, 12, 14, 15, 16, 18, 20, 21, 22, 24, 25, 26, 27, 28, 30, 32, 33, 34, 35, 36, 38, 39,
+                  40, 42, 44, 45, 46, 48, 49, 50, 51, 52, 54, 55, 56, 57, 58, 60, 62, 63, 64, 65, 66, 68, 69, 70, 72,
+                  74, 75, 76, 77, 78, 80, 81, 82, 84, 85, 86, 87, 88, 90, 91, 92, 93, 94, 95, 96, 98, 99]
+
     def sayisal():
         for i in Incele.parcala():
-            Sifre.sifre_liste.append(Sezar.latinDeger(i))
-        return Sifre.sifre_liste
+            Sifre.sifre_liste.append(Sezar.latinDeger(i)) # harfleri sayısal değerlerine çevirdik.
+        return Sifre.sifre_liste #sayısal değerli liste döner
 
+    def ikilikimlik(): # asil sayılarla ikili kimlik oluşturuyoruz.
+        kimlik_sifre = list()
+        j = -1
+        for i in Sifre.sayisal():
+            kimlik_sifre.append(i)
+        try:
+            kimlik_sifre.insert(2,Sifre.asal_liste[random.randint(0,20)])
+            kimlik_sifre.insert(5, Sifre.asal_liste[random.randint(0, 20)])
+            kimlik_sifre.insert(8, Sifre.sayi_liste[random.randint(0, 20)])
+            kimlik_sifre.insert(11, Sifre.sayi_liste[random.randint(0, 20)])
+            kimlik_sifre.insert(14, Sifre.sayi_liste[random.randint(0, 20)])
+            kimlik_sifre.insert(17, Sifre.sayi_liste[random.randint(0, 20)])
+            kimlik_sifre.insert(20, Sifre.asal_liste[random.randint(0, 20)])
+            kimlik_sifre.insert(23, Sifre.asal_liste[random.randint(0, 20)])
+        except:
+            pass
+
+
+        return kimlik_sifre
 
 
 
@@ -90,7 +119,7 @@ def main():
     else:
         ModAyar.modDegis("oa")
 
-    print(Sifre.sayisal())
+    print(Sifre.ikilikimlik())
 
 
 
