@@ -1,3 +1,5 @@
+# © CARULLAH SAİD BERK
+
 import random
 csb = input("Lütfen Şifrelemek İstediğiniz Metni Giriniz: ")
 
@@ -43,6 +45,8 @@ class Sezar():
                     "v":31,
                     "y":36,
                     "z":11,
+                    "T":"T",
+                    "C":"C",
                     } #latin - osmanlı alfabe karşılığı
 
      def latinDeger(harf): #latince ifadenin sayısal karşılığını
@@ -66,9 +70,15 @@ class Incele():
             Incele.harfler.append(csb[Incele.basla+i:Incele.bitir+i])
             Incele.harfler = Incele.harfler + Incele.durak()
 
-        print(Incele.harfler)
         return Incele.harfler
 
+
+class Sifre():
+    sifre_liste = list()
+    def sayisal():
+        for i in Incele.parcala():
+            Sifre.sifre_liste.append(Sezar.latinDeger(i))
+        return Sifre.sifre_liste
 
 
 
@@ -80,7 +90,7 @@ def main():
     else:
         ModAyar.modDegis("oa")
 
-    Incele.parcala()
+    print(Sifre.sayisal())
 
 
 
