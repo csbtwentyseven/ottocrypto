@@ -12,7 +12,7 @@ class ModAyar():
         for satir in dosya:
             return satir
 
-class Sezar:
+class Sezar():
      latin_tablo = {"a":21,
                     "b":2,
                     "c":6,
@@ -50,7 +50,13 @@ class Sezar:
          else:
              return Sezar.latin_tablo.get(harf)
 
-
+class Incele():
+    basla = 0
+    bitir = 1
+    harfler = list()
+    def parcala(): #string parçalandı harfler isimli bir listeye tüm harfleri tek tek atıldı.
+        for i in range(0,len(csb)):
+            Incele.harfler.append(csb[Incele.basla+i:Incele.bitir+i])
 
 
 
@@ -61,7 +67,7 @@ def main():
     else:
         ModAyar.modDegis("oa")
 
-    print(Sezar.latinDeger("a")) # latince sayısal karşılığı verir
+    Incele.parcala()
 
 
 
