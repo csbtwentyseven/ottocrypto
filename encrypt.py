@@ -121,16 +121,19 @@ class Sifre():
                 return False
 
     def output():
+        dosya = open('hash.txt', 'w')
+
         cikti1 = ''.join(map(str, Sifre.ikilikimlik()))
         cikti2 = ''.join(reversed(cikti1))
         cikti3 = random.uniform(10.000, 20.000)
         cikti4 = random.uniform(20.000, 30.000)
 
         if(ModAyar.modCek() == "oe"):
+            dosya.write(str(cikti4) + cikti1 + cikti2 + str(cikti3))
             return str(cikti4) + cikti1 + cikti2 + str(cikti3)
 
         elif(ModAyar.modCek() == "oa"):
-
+            dosya.write(cikti1 + str(cikti4) + str(cikti3) + cikti2)
             return cikti1 + str(cikti4) + str(cikti3) + cikti2
 
 
