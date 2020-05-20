@@ -106,9 +106,38 @@ class Sifre():
             kimlik_sifre.insert(23, Sifre.asal_liste[random.randint(0, 20)])
         except:
             pass
-
-
         return kimlik_sifre
+
+    def tekrarTespit():
+        try:
+            if(Sifre.ikilikimlik().count(21) > 4 or Sifre.ikilikimlik().count(1) > 4):
+                raise ValueError
+
+            return True
+        except ValueError:
+            if(input("ÇOK FAZLA E YA DA A KULLANDINIZ DEVAM ETMEK İSTİYOR MUSUNUZ ? E/H") == "E"):
+                return True
+            else:
+                return False
+
+    def output():
+        cikti1 = ''.join(map(str, Sifre.ikilikimlik()))
+        cikti2 = ''.join(reversed(cikti1))
+        cikti3 = random.uniform(10.000, 20.000)
+        cikti4 = random.uniform(20.000, 30.000)
+
+        if(ModAyar.modCek() == "oe"):
+            return str(cikti4) + cikti1 + cikti2 + str(cikti3)
+
+        elif(ModAyar.modCek() == "oa"):
+
+            return cikti1 + str(cikti4) + str(cikti3) + cikti2
+
+
+
+
+
+
 
 
 
@@ -119,7 +148,7 @@ def main():
     else:
         ModAyar.modDegis("oa")
 
-    print(Sifre.ikilikimlik())
+    print(Sifre.output())
 
 
 
