@@ -11,20 +11,44 @@ class Kir():
         else:
             print("Lütfen bir hash giriniz!")
 
-    def Oe_p(hash):
-        parcailk = hash[17:len(hash)-17]
-        parcason = parcailk[:int(len(parcailk) / 2)] #hash'ı fazlalıklardan arındırıyoruz
 
-        print(parcason)
+    def oeSade(hash):
+        parcailk = hash[16:len(hash)-17]
+        parcasade = parcailk[:int(len(parcailk) / 2)] #hash'ı fazlalıklardan arındırıyoruz
+        duz_harfler = list()
+        j = 0
 
-        return parcason
+        print(parcasade)
+
+
+        for i in parcasade: #eğer tek haneli (Q Sayisi) ise bu şekilde ekliyor.
+            if(i == "Q"):
+                duz_harfler.append(parcasade[j+1])
+
+            elif((i == "T" or i == "C")):#cift haneli sifrelerin tespit ve listeye eklenmesi
+                print(parcasade[j+3]+parcasade[j+4])
+
+                if(j == 3):
+                    print("j=", j)
+                    print(parcasade[1]+parcasade[2])
+                elif(j == 2):
+                    print("j=", j)
+                    print(parcasade[0] + parcasade[1])
+
+            j = j + 1
+
+
+
+        return parcasade
+
+
 
 
 
 
 def main():
     if(Kir.modCek(csb) == "oe"):
-        Kir.Oe_p(csb)
+        Kir.oeSade(csb)
 
     elif(Kir.modCek(csb) == "oa"):
         Kir.Oa(csb)

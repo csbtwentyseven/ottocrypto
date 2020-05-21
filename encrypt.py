@@ -16,16 +16,16 @@ class ModAyar():
             return satir
 
 class Sezar():
-     latin_tablo = {"a":21,
-                    "b":2,
-                    "c":6,
-                    "ç":7,
+     latin_tablo = {"a":"21",
+                    "b":"Q2",
+                    "c":"Q6",
+                    "ç":"Q7",
                     "d":10,
-                    "e":1,
+                    "e":"Q1",
                     "f":23,
                     "g":26,
                     "ğ":22,
-                    "h":8,
+                    "h":"Q8",
                     "ı":37,
                     "i":38,
                     "j":14,
@@ -35,11 +35,11 @@ class Sezar():
                     "n":27,
                     "o":39,
                     "ö":40,
-                    "p":3,
+                    "p":"Q3",
                     "r":12,
-                    "s":5,
+                    "s":"Q5",
                     "ş":16,
-                    "t":4,
+                    "t":"Q4",
                     "u":41,
                     "ü":42,
                     "v":31,
@@ -96,29 +96,14 @@ class Sifre():
         for i in Sifre.sayisal():
             kimlik_sifre.append(i)
         try:
-            kimlik_sifre.insert(2,Sifre.asal_liste[random.randint(0,20)])
-            kimlik_sifre.insert(5, Sifre.asal_liste[random.randint(0, 20)])
-            kimlik_sifre.insert(8, Sifre.sayi_liste[random.randint(0, 20)])
-            kimlik_sifre.insert(11, Sifre.sayi_liste[random.randint(0, 20)])
-            kimlik_sifre.insert(14, Sifre.sayi_liste[random.randint(0, 20)])
-            kimlik_sifre.insert(17, Sifre.sayi_liste[random.randint(0, 20)])
-            kimlik_sifre.insert(20, Sifre.asal_liste[random.randint(0, 20)])
-            kimlik_sifre.insert(23, Sifre.asal_liste[random.randint(0, 20)])
+            for i in range(1,(len(kimlik_sifre)+1) + len(csb)): #girilen kelimenin harf sayısı kadar iki asal sayı ekleneceğinden harf sayısı * 2fazla döndürüyoruz.
+                print(i)
+                if((i-2) % 3 == 0 or i-2 == 0): #ikinci beşinci yedinci dokuzuncu ... indexlere asal sayi ekleniyor.
+
+                    kimlik_sifre.insert(i,Sifre.asal_liste[random.randint(0,20)])
         except:
-            pass
+            print("Hata!")
         return kimlik_sifre
-
-    def tekrarTespit():
-        try:
-            if(Sifre.ikilikimlik().count(21) > 4 or Sifre.ikilikimlik().count(1) > 4):
-                raise ValueError
-
-            return True
-        except ValueError:
-            if(input("ÇOK FAZLA E YA DA A KULLANDINIZ DEVAM ETMEK İSTİYOR MUSUNUZ ? E/H") == "E"):
-                return True
-            else:
-                return False
 
     def output():
         dosya = open('hash.txt', 'w')
