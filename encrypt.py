@@ -97,9 +97,7 @@ class Sifre():
             kimlik_sifre.append(i)
         try:
             for i in range(1,(len(kimlik_sifre)+1) + len(csb)): #girilen kelimenin harf sayısı kadar iki asal sayı ekleneceğinden harf sayısı * 2fazla döndürüyoruz.
-                print(i)
                 if((i-2) % 3 == 0 or i-2 == 0): #ikinci beşinci yedinci dokuzuncu ... indexlere asal sayi ekleniyor.
-
                     kimlik_sifre.insert(i,Sifre.asal_liste[random.randint(0,20)])
         except:
             print("Hata!")
