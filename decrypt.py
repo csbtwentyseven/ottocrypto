@@ -25,15 +25,16 @@ class Kir():
             if(i == "Q"):
                 duz_harfler.append(parcasade[j+1])
 
+            if (j == 3 and (i == "T" or i == "C")):
+                print("j=", j)
+                print(parcasade[1] + parcasade[2])
+            elif (j == 2 and (i == "T" or i == "C")):
+                print("j=", j)
+                print(parcasade[0] + parcasade[1])
+
             elif((i == "T" or i == "C")):#cift haneli sifrelerin tespit ve listeye eklenmesi
                 print(parcasade[j+3]+parcasade[j+4])
 
-                if(j == 3):
-                    print("j=", j)
-                    print(parcasade[1]+parcasade[2])
-                elif(j == 2):
-                    print("j=", j)
-                    print(parcasade[0] + parcasade[1])
 
             j = j + 1
 
