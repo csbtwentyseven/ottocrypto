@@ -22,20 +22,21 @@ class Kir():
 
         print(parcasade)
 
+        #SADELEŞMİŞ PARÇA DECODE EDİLİYOR
+        dosya = open('decrypt.txt', 'w')
+        try:
 
-        for i in parcasade: #eğer tek haneli (Q Sayisi) ise bu şekilde ekliyor.
-            if(i == "Q"):
-                duz_harfler.append(parcasade[j+1])
+            for i in parcasade:
+                if((i == "T" or i == "C")):#durak tespti
 
-            elif((i == "T" or i == "C")):#durak tespti
-                if(tc == 0):#ilk durak tespiti
-                    print(parcasade[j-2] + parcasade[j-1])
-                    tc = 1
+                    if(tc == 0 and parcasade[j-2] != "Q"):#ilk durak tespiti
+                        dosya.write(parcasade[j-2] + parcasade[j-1])
+                        tc = 1 # ilk duraktan sonra degiskeni degistirerek ilk duragı isaretliyor.
 
-                print(parcasade[j+3]+parcasade[j+4]) #ilk durağın hem solu hem sağında şifreler var.bunları else alma sağındaki şifreler çekilmiyor.
-
-
-            j = j + 1
+                    dosya.write(parcasade[j+3]+parcasade[j+4]) #ilk durağın hem solu hem sağında şifreler var.bunları else alma sağındaki şifreler çekilmiyor.
+                j = j + 1
+        except:
+            pass
 
 
 

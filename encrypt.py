@@ -108,8 +108,8 @@ class Sifre():
 
         cikti1 = ''.join(map(str, Sifre.ikilikimlik()))
         cikti2 = ''.join(reversed(cikti1))
-        cikti3 = random.uniform(10.000, 20.000)
-        cikti4 = random.uniform(20.000, 30.000)
+        cikti3 = random.uniform(10.000, 50.000)
+        cikti4 = random.uniform(50.000, 90.000)
 
         if(ModAyar.modCek() == "oe"):
             dosya.write(str(cikti4) + cikti1 + cikti2 + str(cikti3))
