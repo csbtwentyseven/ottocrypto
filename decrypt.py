@@ -1,5 +1,5 @@
+# © CARULLAH SAİD BERK
 csb = input("Lütfen Kırmak İstediğiniz Şifreyi Yazınız:")
-
 
 class Kir():
     def modCek(hash): #Modu tespit edip gönderir.
@@ -63,7 +63,7 @@ class Kir():
         Eslestir.sayidanharf()
 
 class Eslestir():
-    osman_tablo = {"21": "a",
+    osman_tablo = {"21": "a", #boslugu karakter olarak goruyor.
                    "Q2": "b",
                    "Q6": "c",
                    "Q7": "ç",
@@ -95,6 +95,13 @@ class Eslestir():
                    "T": "T",
                    "C": "C",
                    "14": " ",
+                   "70":".",
+                   "71":",",
+                   "72":"!",
+                   "73":"?",
+                   "74":":",
+                   "75":";",
+                   "76":"'",
                    }  # latin - osmanlı alfabe karşılığı
 
     def sayidanharf():

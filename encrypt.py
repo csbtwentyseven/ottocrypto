@@ -1,8 +1,7 @@
 # © CARULLAH SAİD BERK
-
 import random
-csb = input("Lütfen Şifrelemek İstediğiniz Metni Giriniz: ")
-
+metin = input("Lütfen Şifrelemek İstediğiniz Metni Giriniz: ")
+csb = metin.lower()  # inputu alıp küçük harflere döküyoruz.
 
 class ModAyar():
 
@@ -48,6 +47,13 @@ class Sezar():
                     "T":"T",
                     "C":"C",
                     " ":1453,
+                    ".":70,
+                    ",":71,
+                    "!":72,
+                    "?":73,
+                    ":":74,
+                    ";":75,
+                    "'":76,
                     } #latin - osmanlı alfabe karşılığı
 
      def latinDeger(harf): #latince ifadenin sayısal karşılığını
