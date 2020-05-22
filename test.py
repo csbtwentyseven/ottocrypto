@@ -1,2 +1,5 @@
-import random
-print(random.uniform(10.000, 20.000))
+dosya  = open("parcasade.txt",'r')
+
+parcasade = dosya.read()
+
+print(parcasade)
