@@ -45,7 +45,7 @@ class Kir():
 
         j = 0  # döngü index degiskeni
         tc = 0  # ilk durak tespit degiskeni
-        print(parcasade)
+
         for i in parcasade:
             if((i == "T" or i == "C")):#durak tespti
 

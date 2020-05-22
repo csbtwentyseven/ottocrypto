@@ -126,14 +126,6 @@ class Sifre():
             return cikti1 + str(cikti4) + str(cikti3) + cikti2
 
 
-
-
-
-
-
-
-
-
 def main():
     if(len(csb) % 2 == 0): #kelime uzunluguna gore mod verisi gonderir
         ModAyar.modDegis("oe")
@@ -141,6 +133,7 @@ def main():
         ModAyar.modDegis("oa")
 
     print(Sifre.output())
+    print("Şifreli Metninizi hash.txt'de Bulabilirsiniz")
 
 
 
