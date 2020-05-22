@@ -22,8 +22,20 @@ class Kir():
         dosyaoe.close()
         Kir.decode()
 
-    def oaSade(self): #oa modunu sadeleştirir.
-        print("Sa")
+    def oaSade(hash): #oa modunu sadeleştirir.
+        dosyaoa = open("parcasade.txt","w")
+        j = 0
+        nt = 0 # ilk nokta tespit edici
+        for i in hash: # noktayı bulana dek ara
+            if(i == "." and nt == 0): #ilk noktayı bulursan
+                parcason = hash[:j-2] #ilk indexten itibaren nokta indeksine kadar hepsini parcason isimli degiskene ata(son iki indeksi alma)
+                break # döngüyü durdur
+
+            j = j + 1
+
+        dosyaoa.write(parcason)
+        dosyaoa.close()
+        Kir.decode()
 
 
     def decode(): #gelen sade hash'in sayisal verilerini ayıklar.
@@ -63,7 +75,7 @@ class Eslestir():
                    "Q8": "h",
                    "37": "ı",
                    "38": "i",
-                   "14": "j",
+                   "97": "j",
                    "24": "k",
                    "28": "l",
                    "29": "m",
@@ -82,7 +94,7 @@ class Eslestir():
                    "11": "z",
                    "T": "T",
                    "C": "C",
-                   "1453": " ",
+                   "14": " ",
                    }  # latin - osmanlı alfabe karşılığı
 
     def sayidanharf():
