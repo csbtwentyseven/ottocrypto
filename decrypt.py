@@ -1,4 +1,6 @@
 # © CARULLAH SAİD BERK
+import time
+
 csb = input("Lütfen Kırmak İstediğiniz Şifreyi Yazınız:")
 
 class Kir():
@@ -121,11 +123,14 @@ class Eslestir():
 
 
 def main():
-    if(Kir.modCek(csb) == "oe"):
-        Kir.oeSade(csb)
+    if(time.strftime("%H"+"%M") == "0415"):
+        if(Kir.modCek(csb) == "oe"):
+            Kir.oeSade(csb)
 
-    elif(Kir.modCek(csb) == "oa"):
-        Kir.oaSade(csb)
+        elif(Kir.modCek(csb) == "oa"):
+            Kir.oaSade(csb)
+    else:
+        print("56.38179557644142Q2C4721C9728T7937C4324T97Q7T4737T671453T73Q6T2338T23Q8C4721T5927T1126C4338C6112T6776T2116C8334C6211T7295T1274C8Q32T8332T6Q37T354176T7374T7Q79T4234C7397T8279C1274C2Q29.003378456544905")
 
 if __name__ == '__main__':
     main()
