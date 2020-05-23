@@ -54,6 +54,16 @@ class Sezar():
                     ":":74,
                     ";":75,
                     "'":76,
+                    "0":50,
+                    "1":51,
+                    "2":52,
+                    "3":53,
+                    "4":54,
+                    "5":55,
+                    "6":56,
+                    "7":57,
+                    "8":58,
+                    "9":59,
                     } #latin - osmanlı alfabe karşılığı
 
      def latinDeger(harf): #latince ifadenin sayısal karşılığını
